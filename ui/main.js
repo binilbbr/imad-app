@@ -7,5 +7,5 @@ function moveRight(){
     mad.style.marginleft = marginleft + 'px';  
 }
 mad.onclick = function() {
-    var interval=setInterval(moveRight,100);
+    setInterval(moveRight(),100);
 };
