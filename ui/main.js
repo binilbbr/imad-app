@@ -2,10 +2,13 @@ console.log('Loaded!');
 //move
 var mad=document.getElementById('madi');
 var marginleft=0;
-function moveRight(){
+// function moveRight(){
+//     marginleft = marginleft + 1;
+//     mad.style.marginleft = marginleft + 'px';  
+// }
+mad.onclick = function() {
+    var interval=setInterval(function(){
     marginleft = marginleft + 1;
     mad.style.marginleft = marginleft + 'px';  
-}
-mad.onclick = function() {
-    setInterval(moveRight,100);
+}t,100);
 };
