@@ -10,5 +10,5 @@ mad.onclick = function() {
     var interval=setInterval(function(){
     marginleft = marginleft + 1;
     mad.style.marginleft = marginleft + 'px';  
-}t,100);
+},100);
 };
