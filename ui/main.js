@@ -1,6 +1,6 @@
 console.log('Loaded!');
 //move
-var madi=document.getElementBYID('madi');
+var madi=document.getElementById('madi');
 var marginleft=0;
 function moveRight(){
     marginleft=marginleft+10;
