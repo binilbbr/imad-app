@@ -9,4 +9,4 @@ function moveRight(){
 
 mad.onclick =function() {
     var interval=setInterval(moveRight,50);
-}
+};
