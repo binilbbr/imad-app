@@ -7,11 +7,29 @@ app.use(morgan('combined'));
 
 var articleOne={
     title: 'article one',
-    heading: 'Article one',
+    heading: '<h1>Article one</h2>',
     content:
     `<p>
         this is article one.this is article one.this is article one.this is article one.this is article one.
         this is article one.this is article one.this is article one.this is article one.this is article one.
+    </p>`
+};
+
+var articleTwo={
+    title: 'article two',
+    heading: '<h1>Article two</h2>',
+    content:
+    `<p>
+        this is article two.
+    </p>`
+};
+
+var articleThree={
+    title: 'article three',
+    heading: '<h1>Article three</h2>',
+    content:
+    `<p>
+        this is article three.
     </p>`
 };
 
@@ -30,10 +48,10 @@ function createTemplate(data){
     <body>
     <div class="container">
     <div>
-        <a href="/"><h3>Home</h3></a>hii
+        <a href="/"><h3>Home</h3></a>
     </div>        
     <hr>
-    <h2>${heading}</h2>
+    ${heading}
     ${content}
      </div>
     </body>
@@ -51,11 +69,11 @@ app.get('/article-one',function(req,res){
 });
 
 app.get('/article-two',function(req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+    res.send(createTemplate(articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
