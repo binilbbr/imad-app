@@ -70,7 +70,7 @@ app.get('/counter',function(req,res){
     res.send(counter.toString());
 });
 var names=[];
-app.get('/submit',function(req,res){
+app.get('/submit',function(req,res){//submit?name=
     var name=req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
