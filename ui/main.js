@@ -18,3 +18,18 @@ bmonitor.onclick= function()
     request.open('GET','http://binil666682.imad.hasura-app.io/counter',true);
     request.send(null);
 };
+//submit name
+var nam=document.getElementById('name');
+var nameinput=nam.value;
+var submit=document.getElementById('submitbutton');
+submit.onclick= function(){
+    //make 
+    
+    var names=['name1','name2','name3'];
+    var list='';
+    for(var i=0;i<names.length;i++){
+        list+='<li>' + names[i] + '</li>';
+    }
+    var namelist=document.getElementBYId('list');
+    namelist.innerHTML=list;
+};
