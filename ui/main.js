@@ -1,14 +1,8 @@
-console.log('Loaded!');
-//move
-var mad=document.getElementById('madi');
-var marginleft=0;
-// function moveRight(){
-//     marginleft = marginleft + 1;
-//     mad.style.marginleft = marginleft + 'px';  
-// }
-mad.onclick = function() {
-    var interval=setInterval(function(){
-    marginleft = marginleft + 1;
-    mad.style.marginleft = marginleft + 'px';  
-},100);
-};
+var buttonmonitor=getElementById('fbut');
+var counter = 0;
+buttonmonitor.onclick= function()
+{
+    counter =counter+1;
+    var span= getElementById('noc');
+    span.innerHTML = counter.toString();
+}
