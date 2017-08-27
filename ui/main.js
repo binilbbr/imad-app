@@ -19,17 +19,30 @@ bmonitor.onclick= function()
     request.send(null);
 };
 //submit name
-var nam=document.getElementById('name');
-var nameinput=nam.value;
+var nameinput=document.getElementById('name');
+var nam=nameinput.value;
 var submit=document.getElementById('submitbutton');
 submit.onclick= function(){
-    //make 
-    
-    var names=['name1','name2','name3'];
-    var list='';
-    for(var i=0;i<names.length;i++){
-        list+='<li>' + names[i] + '</li>';
+    //make request
+    var request= new XMLHttpRequest()
+    //waiting for request and store response in a variable
+    request.onreadystatechange= function(){
+        if(request.readyState == XMLHttpRequest.DONE)
+            {
+            if(request.status == 200)
+               {
+                    var names=request.responseText;
+                    JSON.parse(names);
+                    var list='';
+                    for(var i=0;i<names.length;i++){
+                        list+='<li>' + names[i] + '</li>';
+                    }
+                    var namelist=document.getElementById('list');
+                    namelist.innerHTML=list;
+                }
+            }
     }
-    var namelist=document.getElementById('list');
-    namelist.innerHTML=list;
+    //making the request
+    request.open('GET','http://binil666682.imad.hasura-app.io/submit?name='+nam,true);
+    request.send(null);
 };
