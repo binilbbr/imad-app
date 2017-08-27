@@ -1,8 +1,8 @@
-var buttonmonitor=getElementById('fbut');
+var bmonitor=getElementById('fbut');
 var counter = 0;
-buttonmonitor.onclick= function()
+bmonitor.onclick= function()
 {
     counter =counter+1;
-    var span= getElementById('noc');
-    span.innerHTML = counter.toString();
+    var spann= getElementById('noc');
+    spann.innerHTML = counter.toString();
 }
