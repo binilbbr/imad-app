@@ -43,6 +43,8 @@ submit.onclick= function(){
             }
     }
     //making the request
+    var nameinput=document.getElementById('name');
+    var nam=nameinput.value;
     request.open('GET','http://binil666682.imad.hasura-app.io/submit?name='+nam,true);
     request.send(null);
 };
