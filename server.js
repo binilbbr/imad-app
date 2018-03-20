@@ -88,7 +88,7 @@ app.get('/submit',function(req,res){//submit?name=
 var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     
-    pool.Query('select * from text',function(err,result){
+    pool.query('select * from text',function(err,result){
         if(err){
             res.status('404').send(err.toString());
             
