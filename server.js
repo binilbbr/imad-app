@@ -100,6 +100,13 @@ app.get('/test-db',function(req,res){
     });
 });
 
+app.get('/articles/articlename',function(req,res){
+    
+    pool.query("select * from article where title= " + req.params.articlename,function(err,result){
+        
+        
+    });
+});
 app.get('/:articleName',function(req,res){
     var articleName=req.params.articleName;
     res.send(createTemplate(articles[articleName]));
