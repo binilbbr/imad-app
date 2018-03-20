@@ -113,7 +113,7 @@ app.get('/articles/:articlename',function(req,res){
                 res.status('500').send("Article not found");
             }
             else{
-                res.send(JSON.stringify(result.rows));
+                //res.send(JSON.stringify(result.rows));
                 var data=result.rows[0];
                 res.send(createTemplate(data));
             }
