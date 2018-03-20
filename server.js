@@ -100,7 +100,7 @@ app.get('/test-db',function(req,res){
     });
 });
 
-app.get('/articles/articlename',function(req,res){
+app.get('/articles/:articlename',function(req,res){
     
     pool.query("select * from article where title= " + req.params.articlename,function(err,result){
          if(err){
@@ -116,7 +116,6 @@ app.get('/articles/articlename',function(req,res){
                 var data=result.rows[0];
                 res.send(createTemplate(data));
             }
-            
         }
         
     });
