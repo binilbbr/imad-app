@@ -101,7 +101,7 @@ app.get('/test-db',function(req,res){
 });
 
 app.get('/articles/:articlename',function(req,res){
-    console.log(req.params.articlename)
+    console.log(req.params.articlename);
     pool.query("select * from article where title= " + 'req.params.articlename',function(err,result){
          if(err){
             res.status('404').send(err.toString());
